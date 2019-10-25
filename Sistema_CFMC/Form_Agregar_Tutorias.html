@@ -23,11 +23,21 @@
 	<!-- /core JS files -->
 
 	<!-- Theme JS files -->
-	<script src="../../../../global_assets/js/plugins/tables/datatables/datatables.min.js"></script>
 	<script src="../../../../global_assets/js/plugins/forms/selects/select2.min.js"></script>
+	<script src="../../../../global_assets/js/plugins/forms/styling/uniform.min.js"></script>
+	<script src="../../../../global_assets/js/plugins/ui/moment/moment.min.js"></script>
+	<script src="../../../../global_assets/js/plugins/pickers/daterangepicker.js"></script>
+	<script src="../../../../global_assets/js/plugins/pickers/anytime.min.js"></script>
+	<script src="../../../../global_assets/js/plugins/pickers/pickadate/picker.js"></script>
+	<script src="../../../../global_assets/js/plugins/pickers/pickadate/picker.date.js"></script>
+	<script src="../../../../global_assets/js/plugins/pickers/pickadate/picker.time.js"></script>
+	<script src="../../../../global_assets/js/plugins/pickers/pickadate/legacy.js"></script>
+	<script src="../../../../global_assets/js/plugins/notifications/jgrowl.min.js"></script>
+
 
 	<script src="assets/js/app.js"></script>
-	<script src="../../../../global_assets/js/demo_pages/datatables_basic.js"></script>
+	<script src="../../../../global_assets/js/demo_pages/form_layouts.js"></script>
+	<script src="../../../../global_assets/js/demo_pages/picker_date.js"></script>
 	<!-- /theme JS files -->
 
 </head>
@@ -499,15 +509,15 @@
 			<div class="page-header page-header-light">
 				<div class="page-header-content header-elements-md-inline">
 					<div class="page-title d-flex">
-						<h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">Tablas</span> - Maestros</h4>
+						<h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">Agregar</span> - Tutorías</h4>
 						<a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
 					</div>
 
 					<div class="header-elements d-none">
 						<div class="d-flex justify-content-center">
-							<a href="#" class="btn btn-link btn-float text-default"><i class="icon-bars-alt text-primary"></i><span>Statistics</span></a>
-							<a href="#" class="btn btn-link btn-float text-default"><i class="icon-calculator text-primary"></i> <span>Invoices</span></a>
-							<a href="#" class="btn btn-link btn-float text-default"><i class="icon-calendar5 text-primary"></i> <span>Schedule</span></a>
+							<a href="#" class="btn btn-link btn-float text-default"><i class="icon-bars-alt text-primary"></i><span>Estadísticas</span></a>
+							<a href="#" class="btn btn-link btn-float text-default"><i class="icon-calculator text-primary"></i> <span>Correo</span></a>
+							<a href="#" class="btn btn-link btn-float text-default"><i class="icon-calendar5 text-primary"></i> <span>Agenda</span></a>
 						</div>
 					</div>
 				</div>
@@ -516,8 +526,8 @@
 					<div class="d-flex">
 						<div class="breadcrumb">
 							<a href="index.html" class="breadcrumb-item"><i class="icon-home2 mr-2"></i> Home</a>
-							<a href="Tabla_Maestros.html" class="breadcrumb-item">Tablas</a>
-							<span class="breadcrumb-item active">Maestros</span>
+							<a href="Form_Alumno_Maestro.html" class="breadcrumb-item">Agregar</a>
+							<span class="breadcrumb-item active">Tutorías</span>
 						</div>
 
 						<a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
@@ -553,11 +563,10 @@
 
 			<!-- Content area -->
 			<div class="content">
-
-				<!-- Basic datatable -->
+				<!-- 2 columns form -->
 				<div class="card">
 					<div class="card-header header-elements-inline">
-						<h5 class="card-title">Default style</h5>
+						<h5 class="card-title">Registro/Edición</h5>
 						<div class="header-elements">
 							<div class="list-icons">
 		                		<a class="list-icons-item" data-action="collapse"></a>
@@ -567,146 +576,77 @@
 	                	</div>
 					</div>
 
-					<table class="table datatable-basic">
-						<thead>
-							<tr>
-								<th>Nombre(s)</th>
-								<th>Apellidos</th>
-								<th>Edad</th>
-								<th>Materia</th>
-								<th>Grado de Capacitación</th>
-								<th>Correo Electrónico</th>
-								<th>Dirección</th>
-								<th>Ciudad y Estado</th>
-								<th>Estado (Status)</th>
-								<th class="text-center">Acciones</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Berta Cano</td>
-								<td>Rodríguez Lorenzo</td>
-								<td>35</td>
-								<td>Inglés</td>
-								<td>Licenciatura</td>
-								<td>B_Cano@upv.edu.mx</td>
-								<td>Calle Lomo</td>
-								<td>Tamaulipas, Cuidad Victoria</td>
-								<td><span class="badge badge-success">Activo</span></td>
-								<td class="text-center">
-									<div class="list-icons">
-										<div class="dropdown">
-											<a href="#" class="list-icons-item" data-toggle="dropdown">
-												<i class="icon-menu9"></i>
-											</a>
+					<div class="card-body">
+						<form action="#">
+							<div class="row">
+								<div class="col-md-13">
+									<fieldset>
+										<legend class="font-weight-semibold"><i class="icon-reading mr-2"></i> Edición de Tutoría</legend>
+										<div class="form-group">
+											<label>ID:</label>
+											<input type="text" class="form-control" placeholder="1">
+										</div>
 
-											<div class="dropdown-menu dropdown-menu-right">
-												<a href="#" class="dropdown-item"><i class="icon-file-pdf"></i> Editar</a>
-												<a href="#" class="dropdown-item"><i class="icon-file-excel"></i> Eliminar</a>
+										<div class="form-group">
+											<label>Nombre:</label>
+											<input type="text" class="form-control" placeholder="Pon el nombre del alumno aquí">
+										</div>
+										
+										<div class="row">
+											<div class="col-md-6">
+												<label>Fecha De Sesión</label>
+												<div class="input-group">
+										        <span class="input-group-prepend">
+											    <span class="input-group-text"><i class="icon-calendar5"></i></span>
+										        </span>
+										        <input type="text" class="form-control pickadate" placeholder="Fecha de la tutoría&hellip;">
+									            </div>
+											</div>
+
+											<div class="col-md-9">
+												<div class="form-group">
+													<label>Materia:</label>
+													<input type="text" placeholder="Materia en la que el alumno busca ayuda" class="form-control">
+												</div>
 											</div>
 										</div>
-									</div>
-								</td>
-							</tr>
-							<tr>
-								<td>Mario</td>
-								<td>Moreno Sánchez</td>
-								<td>46</td>
-								<td>Doctorado</td>
-								<td>Licenciatura</td>
-								<td>M-Moreno@upv.edu.mx</td>
-								<td>Calle Lima</td>
-								<td>Tamaulipas, Cuidad Victoria</td>
-								<td><span class="badge badge-success">Activo</span></td>
-								<td class="text-center">
-									<div class="list-icons">
-										<div class="dropdown">
-											<a href="#" class="list-icons-item" data-toggle="dropdown">
-												<i class="icon-menu9"></i>
-											</a>
 
-											<div class="dropdown-menu dropdown-menu-right">
-												<a href="#" class="dropdown-item"><i class="icon-file-pdf"></i> Editar</a>
-												<a href="#" class="dropdown-item"><i class="icon-file-excel"></i> Eliminar</a>
+										<div class="row">
+											<div class="col-md-6">
+												<div class="form-group">
+											        <label>Matrícula:</label>
+											        <input type="text" class="form-control" placeholder="Matrícula del alumno">
+										        </div>
+											</div>
+
+											<div class="col-md-6">
+
+												<div class="form-group">
+											        <label>Carrera:</label>
+											        <input type="text" class="form-control" placeholder="Carrera del alumno">
+										        </div>
 											</div>
 										</div>
-									</div>
-								</td>
-							</tr>
-							<tr>
-								<td>Teresa Marin</td>
-								<td>Roman Hernández</td>
-								<td>28</td>
-								<td>Álgebra</td>
-								<td>Maestría</td>
-								<td>R_teresa@upv.edu.mx</td>
-								<td>Calle Sapo</td>
-								<td>Tamaulipas, Tampico</td>
-								<td><span class="badge badge-danger">Se fue</span></td>
-								<td class="text-center">
-									<div class="list-icons">
-										<div class="dropdown">
-											<a href="#" class="list-icons-item" data-toggle="dropdown">
-												<i class="icon-menu9"></i>
-											</a>
 
-											<div class="dropdown-menu dropdown-menu-right">
-												<a href="#" class="dropdown-item"><i class="icon-file-pdf"></i> Editar</a>
-												<a href="#" class="dropdown-item"><i class="icon-file-excel"></i> Eliminar</a>
+										<div class="row">
+											<div class="col-md-12">
+												<div class="form-group">
+													<label>Maestro:</label>
+													<input type="text" placeholder="Nombre completo del tutor" class="form-control">
+												</div>
 											</div>
 										</div>
-									</div>
-								</td>
-							</tr>
-							<tr>
-								<td>Juanín Tulio</td>
-								<td>Melendez Porras</td>
-								<td>30</td>
-								<td>Programación</td>
-								<td>Ingeniería</td>
-								<td>J_T_porras@upv.edu.mx</td>
-								<td>Calle Sierra</td>
-								<td>Tamaulipas, Victoria</td>
-								<td><span class="badge badge-danger">Se fue</span></td>
-								<td class="text-center">
-									<div class="list-icons">
-										<div class="dropdown">
-											<a href="#" class="list-icons-item" data-toggle="dropdown">
-												<i class="icon-menu9"></i>
-											</a>
+									</fieldset>
+								</div>
+							</div>
 
-											<div class="dropdown-menu dropdown-menu-right">
-												<a href="#" class="dropdown-item"><i class="icon-file-pdf"></i> Editar</a>
-												<a href="#" class="dropdown-item"><i class="icon-file-excel"></i> Eliminar</a>
-											</div>
-										</div>
-									</div>
-								</td>
-							</tr>
-						</tbody>
-					</table>
+							<div class="text-left">
+								<button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#modal_mini">Guardar <i class="icon-paperplane ml-2"></i></button>
+							</div>
+						</form>
+					</div>
 				</div>
-				<!-- /basic datatable -->
-
-
-				<!-- Striped rows -->
-				
-				<!-- /striped rows -->
-
-
-				<!-- Hover rows -->
-				
-				<!-- /hover rows -->
-
-
-				<!-- Bordered table -->
-				
-				<!-- /bordered table -->
-
-
-				<!-- Style combinations -->
-				
-				<!-- /style combinations -->
+				<!-- /2 columns form -->
 
 			</div>
 			<!-- /content area -->
@@ -733,6 +673,22 @@
 					</ul>
 				</div>
 			</div>
+
+			<div id="modal_mini" class="modal fade" tabindex="-1">
+					<div class="modal-dialog modal-xs">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title"></h5>
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+							</div>
+
+							<div class="modal-body">
+								<h6 class="font-weight-semibold">El alumno ha sido agregado exitosamente.</h6>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 			<!-- /footer -->
 
 		</div>
@@ -740,6 +696,5 @@
 
 	</div>
 	<!-- /page content -->
-
 </body>
 </html>
